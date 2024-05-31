@@ -1,0 +1,21 @@
+<div class="container mt-3">
+    <app-filtro (filtersChanged)="onFiltersChanged($event)"></app-filtro>
+    <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="votos-tab" data-bs-toggle="tab" href="#votos" role="tab"
+                aria-controls="votos" aria-selected="true">Contador de Votos</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="grafica-tab" data-bs-toggle="tab" href="#grafica" role="tab" aria-controls="grafica"
+                aria-selected="false">Gráfica</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="votos" role="tabpanel" aria-labelledby="votos-tab">
+            <app-candidatos [filters]="filters"></app-candidatos>
+        </div>
+        <div class="tab-pane fade" id="grafica" role="tabpanel" aria-labelledby="grafica-tab">
+            <canvas id="graficaVotos" class="mt-3"></canvas>
+        </div>
+    </div>
+</div>

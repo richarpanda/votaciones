@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <div class="form-group mb-3">
+                    <label for="seccion" class="form-label">Sección:</label>
+                    <select id="seccion" class="form-select" [(ngModel)]="seccion" (change)="onSeccionChange()">
+                        <option value="">Selecciona Sección</option>
+                        <option *ngFor="let seccion of secciones" [value]="seccion">{{ seccion }}</option>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="casilla" class="form-label">Casilla:</label>
+                    <select id="casilla" class="form-select" [(ngModel)]="casilla">
+                        <option value="">Selecciona Casilla</option>
+                        <option *ngFor="let casilla of casillasFiltradas" [value]="casilla">{{ casilla }}</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary w-100" (click)="applyFilters()">Aplicar Filtros</button>
+            </div>
+            <div *ngIf="filtersApplied" class="alert alert-info mt-3">
+                <p *ngIf="appliedSeccion">Sección seleccionada: {{ appliedSeccion }}</p>
+                <p *ngIf="appliedCasilla">Casilla seleccionada: {{ appliedCasilla }}</p>
+            </div>
+        </div>
+    </div>
+</div>

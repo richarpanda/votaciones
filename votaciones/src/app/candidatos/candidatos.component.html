@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-2" *ngFor="let candidato of candidatos">
+            <div class="d-flex align-items-center justify-content-between border px-3">
+                <div class="d-flex align-items-center">
+                    <img [src]="candidato.imagen" alt="{{ candidato.nombre }}" class="img-thumbnail img m-1" width="100">
+                    <div class="ms-3">
+                        <h5 class="text-rosa">{{ candidato.partido }}</h5>
+                        <p class="mb-0">{{ candidato.nombre }}</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="me-3 text-rosa" style="font-size: 1.5rem;">{{ candidato.votos }}</span>
+                    <button class="btn btn-primary" (click)="incrementarVotos(candidato)">Sumar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
